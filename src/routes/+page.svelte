@@ -15,7 +15,7 @@
 </Section>
 
 <Section id="stack" title="Stack">
-    <div class="border-y border-dashed border-border/60 mt-4">
+    <div class="mt-4">
         <StackItem
             number="01"
             category="Languages"
