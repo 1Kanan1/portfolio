@@ -1,7 +1,5 @@
 <script lang="ts">
-    import Header from "$lib/components/Header.svelte";
     import Section from "$lib/components/Section.svelte";
-    import Footer from "$lib/components/Footer.svelte";
     import CompanyGroup from "$lib/components/CompanyGroup.svelte";
     import ExperienceItem from "$lib/components/ExperienceItem.svelte";
     import ProjectItem from "$lib/components/ProjectItem.svelte";
@@ -9,7 +7,6 @@
     import * as Accordion from "$lib/components/ui/accordion/index.js";
 </script>
 
-<Header />
 <Section id="about" title="About">
     <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
         Software Engineer focused on minimal, efficient, and beautiful web
@@ -92,4 +89,3 @@
         />
     </div>
 </Section>
-<Footer />

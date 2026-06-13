@@ -4,6 +4,8 @@
     import { ModeWatcher } from "mode-watcher";
     import { onNavigate } from "$app/navigation";
     import ScrollToTop from "$lib/components/ScrollToTop.svelte";
+    import Header from "$lib/components/Header.svelte";
+    import Footer from "$lib/components/Footer.svelte";
 
     let { children } = $props();
 
@@ -34,5 +36,7 @@
 <main
     class="max-w-3xl mx-auto px-8 pt-10 pb-16 min-h-screen antialiased selection:bg-muted"
 >
+    <Header />
     {@render children()}
+    <Footer />
 </main>
