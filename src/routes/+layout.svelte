@@ -2,8 +2,22 @@
     import "./layout.css";
     import favicon from "$lib/assets/favicon.svg";
     import { ModeWatcher } from "mode-watcher";
+    import { onNavigate } from "$app/navigation";
+    import ScrollToTop from "$lib/components/ScrollToTop.svelte";
 
     let { children } = $props();
+
+    // page-to-page animation by crossfading old picture into new one
+    onNavigate((navigation) => {
+        if (!document.startViewTransition) return; // if browser doesn't support
+
+        return new Promise((resolve) => {
+            document.startViewTransition(async () => {
+                resolve(); // pauses the animation
+                await navigation.complete; // swaps DOM to new page
+            });
+        });
+    });
 </script>
 
 <svelte:head>
@@ -15,6 +29,7 @@
 </svelte:head>
 
 <ModeWatcher />
+<ScrollToTop />
 
 <main
     class="max-w-3xl mx-auto px-8 pt-10 pb-16 min-h-screen antialiased selection:bg-muted"
