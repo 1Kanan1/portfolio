@@ -1,6 +1,7 @@
 <script lang="ts">
     import { Badge } from "$lib/components/ui/badge/index.js";
     import ArrowUpRight from "@lucide/svelte/icons/arrow-up-right";
+    import { getTechIcon } from "$lib/data/tech";
 
     let {
         title,
@@ -44,14 +45,16 @@
     {#if stack.length > 0}
         <div class="flex flex-wrap gap-2 mt-2">
             {#each stack as tech}
+                {@const iconClass = getTechIcon(tech)}
                 <Badge
                     variant="secondary"
-                    class="font-normal font-mono text-xs"
+                    class="font-normal font-mono text-xs flex items-center gap-1.5"
                 >
-                    <i class="devicon-{tech.replace(/[.-]/g, '')}-plain colored"
-                    ></i>
-                    {tech}</Badge
-                >
+                    {#if iconClass}
+                        <i class="{iconClass} text-sm"></i>
+                    {/if}
+                    {tech}
+                </Badge>
             {/each}
         </div>
     {/if}
