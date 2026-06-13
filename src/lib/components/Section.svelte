@@ -1,6 +1,7 @@
 <script lang="ts">
     import LinkIcon from "@lucide/svelte/icons/link";
     import Check from "@lucide/svelte/icons/check";
+    import { reveal } from "$lib/actions/reveal";
 
     let { id, title, children } = $props<{
         id?: string;
@@ -22,7 +23,7 @@
     }
 </script>
 
-<section {id} class="mb-12 scroll-mt-28">
+<section {id} class="mb-12 scroll-mt-28 opacity-0 translate-y-8" use:reveal>
     <h2
         class="group flex items-center gap-2 w-full text-xs font-bold tracking-widest uppercase text-slate-400 mb-6"
     >
