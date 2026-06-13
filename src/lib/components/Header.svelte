@@ -3,6 +3,7 @@
 
     let headers = [
         { name: "About", url: "#about" },
+        { name: "Stack", url: "#stack" },
         { name: "Experience", url: "#experience" },
         { name: "Projects", url: "#projects" },
     ];
