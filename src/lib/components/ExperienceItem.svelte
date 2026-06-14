@@ -61,13 +61,13 @@
                 {#each stack as tech}
                     {@const iconClass = getTechIcon(tech)}
                     <Badge
-                        variant="secondary"
+                        variant="outline"
                         class="font-normal font-mono text-xs flex items-center gap-1.5"
                     >
                         {#if iconClass}
                             <i class="{iconClass} text-sm"></i>
                         {/if}
-                        {tech.replace(/[.-]/g, '')}
+                        {tech.replace(/[.-]/g, "")}
                     </Badge>
                 {/each}
             </div>

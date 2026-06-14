@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Badge } from "$lib/components/ui/badge/index.js";
-    import { getTechIcon } from "$lib/data/tech";
+    import { getTechIcon, getTechUrl } from "$lib/data/tech";
 
     let { number, category, items } = $props<{
         number: string;
@@ -23,15 +23,30 @@
     <div class="pb-4 sm:py-6 sm:pl-6 flex flex-wrap gap-2 items-center">
         {#each items as item}
             {@const icon = getTechIcon(item)}
-            <Badge
-                variant="outline"
-                class="font-normal bg-background/50 flex items-center gap-1.5 shadow-sm py-1 px-3"
-            >
-                {#if icon}
-                    <i class="{icon} text-sm"></i>
-                {/if}
-                {item}
-            </Badge>
+            {@const url = getTechUrl(item)}
+            {#if url}
+                <a href={url} target="_blank" rel="noopener noreferrer" class="hover:-translate-y-0.5 transition-transform">
+                    <Badge
+                        variant="outline"
+                        class="font-normal bg-background/50 flex items-center gap-1.5 shadow-sm py-1 px-3 hover:bg-muted cursor-pointer"
+                    >
+                        {#if icon}
+                            <i class="{icon} text-sm"></i>
+                        {/if}
+                        {item}
+                    </Badge>
+                </a>
+            {:else}
+                <Badge
+                    variant="outline"
+                    class="font-normal bg-background/50 flex items-center gap-1.5 shadow-sm py-1 px-3"
+                >
+                    {#if icon}
+                        <i class="{icon} text-sm"></i>
+                    {/if}
+                    {item}
+                </Badge>
+            {/if}
         {/each}
     </div>
 </div>
