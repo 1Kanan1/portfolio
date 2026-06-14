@@ -5,7 +5,12 @@
     import ProjectItem from "$lib/components/ProjectItem.svelte";
     import StackItem from "$lib/components/StackItem.svelte";
     import * as Accordion from "$lib/components/ui/accordion/index.js";
-	import { aboutData, stackData, experienceData, projectsData } from "$lib/data";
+    import {
+        aboutData,
+        stackData,
+        experienceData,
+        projectsData,
+    } from "$lib/data";
 </script>
 
 <Section id="about" title="About">
@@ -16,44 +21,44 @@
 
 <Section id="stack" title="Stack">
     <div class="mt-4">
-		{#each stackData as stack}
-			<StackItem
-				number={stack.number}
-				category={stack.category}
-				items={stack.items}
-			/>
-		{/each}
+        {#each stackData as stack}
+            <StackItem
+                number={stack.number}
+                category={stack.category}
+                items={stack.items}
+            />
+        {/each}
     </div>
 </Section>
 
 <Section id="experience" title="Experience">
     <Accordion.Root type="multiple" class="w-full">
-		{#each experienceData as company}
-			<CompanyGroup company={company.company}>
-				{#each company.roles as role, i}
-					<ExperienceItem
-						value={role.id}
-						role={role.title}
-						dates={role.dates}
-						description={role.description}
-						stack={role.stack}
-						isLast={i === company.roles.length - 1}
-					/>
-				{/each}
-			</CompanyGroup>
-		{/each}
+        {#each experienceData as company}
+            <CompanyGroup company={company.company}>
+                {#each company.roles as role, i}
+                    <ExperienceItem
+                        value={role.id}
+                        role={role.title}
+                        dates={role.dates}
+                        description={role.description}
+                        stack={role.stack}
+                        isLast={i === company.roles.length - 1}
+                    />
+                {/each}
+            </CompanyGroup>
+        {/each}
     </Accordion.Root>
 </Section>
 
 <Section id="projects" title="Projects">
     <div class="flex flex-col gap-4">
-		{#each projectsData as project}
-			<ProjectItem
-				title={project.title}
-				description={project.description}
-				link={project.link}
-				stack={project.stack}
-			/>
-		{/each}
+        {#each projectsData as project}
+            <ProjectItem
+                title={project.title}
+                description={project.description}
+                link={project.link}
+                stack={project.stack}
+            />
+        {/each}
     </div>
 </Section>
