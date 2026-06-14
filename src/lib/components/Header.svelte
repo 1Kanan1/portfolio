@@ -14,7 +14,7 @@
 >
     <div>
         <div
-            class="flex gap-4 text-sm font-medium text-slate-500 dark:text-slate-400"
+            class="flex gap-2 sm:gap-4 text-xs sm:text-sm items-center font-medium text-slate-500 dark:text-slate-400"
         >
             {#each headers as header}
                 <a
