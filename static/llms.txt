@@ -1,0 +1,22 @@
+# 1Kanan1 Portfolio
+
+> Software Engineer focused on minimal, efficient, and beautiful web experiences.
+
+## Project Details
+- **Site URL:** https://1kanan1.github.io/
+- **GitHub:** https://github.com/1Kanan1
+
+## Tech Stack
+- **Framework:** SvelteKit (Svelte 5)
+- **Styling:** Tailwind CSS
+- **Components:** shadcn-svelte
+- **Lint/Format:** Oxlint + Oxfmt
+
+## Overview
+This is a static portfolio site deployed to GitHub Pages. It features a minimal footprint, zero heavy animation libraries, and strict separation of concerns between data and presentation. Data is maintained in a central `data.ts` file instead of a CMS.
+
+## Main Sections
+1. **About**: Quick summary.
+2. **Stack**: Frontend, Backend, Tools, Languages.
+3. **Experience**: Professional roles.
+4. **Projects**: Personal open-source work.
