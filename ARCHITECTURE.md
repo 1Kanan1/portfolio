@@ -8,7 +8,7 @@ This project is a highly optimized, single-page developer portfolio built with m
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **UI Components:** Custom components + [shadcn-svelte](https://www.shadcn-svelte.com/) (powered by Bits UI)
 - **Icons:** [Lucide Svelte](https://lucide.dev/) & [Devicon](https://devicon.dev/)
-- **Formatting:** Prettier with Svelte plugin + standard `.editorconfig`
+- **Formatting:** standard `.editorconfig`
 
 ## Data Architecture (Static Extraction)
 To maintain a serverless-friendly, zero-maintenance deployment, all portfolio data (Experience, Projects, Stack) is completely decoupled from the UI components. 
